@@ -1,0 +1,289 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 13px;
+}
+
+fieldset {
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: orange;
+  border-style: solid;
+  padding: 16px;
+  background-color: #f4f5df;
+}
+
+.theme-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+  border-radius: 6px;
+  border-width: 2px;
+  border-color: orange;
+  padding: 20px;
+  border-style: solid;
+  background-color: #f4f5df;
+  margin-top: 20px;
+}
+
+.item {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+header:has(input[name='version'][value='blue']:checked) ~ .container {
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 140px;
+  gap: 20px;
+  align-content: space-between;
+  justify-content: flex-start;
+}
+
+header:has(input[name='version'][value='blue']:checked) ~ .container .item {
+  flex: 0 0 auto;
+  background-color: blue;
+  width: 30%;
+}
+
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(1) {
+  order: 1;
+}
+
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(4) {
+  order: 2;
+}
+
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(3) {
+  order: 4;
+}
+
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(5) {
+  order: 5;
+}
+
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(2) {
+  order: 3;
+  margin-bottom: 150px;
+}
+
+header:has(input[name='version'][value='red']:checked) ~ .container {
+  height: auto;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+header:has(input[name='version'][value='red']:checked) ~ .container .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  background-color: red;
+  width: auto;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(1) {
+  order: 3;
+  font-weight: bold;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(1)::after {
+  content: '(Jestem większy i na środku!)';
+  margin-top: 5px;
+  font-weight: normal;
+  font-size: 80%;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(2) {
+  order: 1;
+  margin-bottom: 0;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(3) {
+  order: 2;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(4) {
+  order: 4;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(5) {
+  order: 5;
+}
+
+header:has(input[name='version'][value='green']:checked) ~ .container {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+}
+
+header:has(input[name='version'][value='green']:checked) ~ .container .item {
+  flex: 0 0 auto;
+  background-color: green;
+}
+
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1)::before,
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1)::after {
+  content: '😀';
+  font-size: 2em;
+  line-height: 0.1;
+}
+
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1) {
+  width: 30%;
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(2) {
+  width: 22%;
+}
+
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(3) {
+  width: 19%;
+}
+
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(4) {
+  width: 13%;
+}
+
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(5) {
+  width: 8%;
+}
+
+@media (max-width: 1024px) {
+  header:has(input[name='version'][value='blue']:checked) ~ .container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: stretch;
+    height: auto;
+  }
+
+  header:has(input[name='version'][value='blue']:checked) ~ .container .item {
+    flex: 0 1 auto;
+    max-width: 600px;
+    width: 60%;
+    order: 0;
+  }
+
+  header:has(input[name='version'][value='blue']:checked)
+    ~ .container
+    .item:nth-child(2) {
+    margin-bottom: 0;
+  }
+
+  header:has(input[name='version'][value='red']:checked) ~ .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header:has(input[name='version'][value='red']:checked) ~ .container .item {
+    flex: 1 1 45%;
+    width: 45%;
+  }
+
+  header:has(input[name='version'][value='red']:checked)
+    ~ .container
+    .item:nth-child(1) {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  header:has(input[name='version'][value='green']:checked) ~ .container {
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+  }
+
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(5) {
+    width: 30%;
+  }
+
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(4) {
+    width: 45%;
+  }
+
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(3) {
+    width: 60%;
+  }
+
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(2) {
+    width: 75%;
+  }
+
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(1) {
+    width: 90%;
+  }
+}
