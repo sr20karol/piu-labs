@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  text-align: center;
+}
+
+.controls button {
+  padding: 12px;
+  margin: 4px;
+  min-width: 150px;
+  cursor: pointer;
+}
+
+.board {
+  margin: 20px auto;
+  min-height: 180px;
+  max-width: 800px;
+  border: 2px dashed #ccc;
+  background: #fafafa;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.shape {
+  width: 60px;
+  height: 60px;
+  border: 3px solid black;
+  transition: transform 0.2s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.shape:hover {
+  transform: scale(1.1);
+}
+
+.square {
+  border-radius: 6px;
+}
+
+.circle {
+  border-radius: 50%;
+}
